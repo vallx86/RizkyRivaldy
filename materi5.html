@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Pembelajaran</title>
+  <link rel="stylesheet" href="./assets/css/materi.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>DOMAIN NAME SYSTEMI</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="materi">
+      <h2>DNS</h2>
+      <figure>
+        <img src="assets/img/tcp-ip-model.webp" alt="tcp">
+        <figcaption>Definisi DNS</figcaption>
+      </figure>
+      <h3>Apa itu DNS Server ?</h3>
+      <p>
+        DNS artinya adalah sebuah layanan yang di install pada sebuah server untuk menyimpan informasi tentang nama host
+        atau nama domain dalam bentuk database atau basis data tersebar (distributed database) pada jaringan komputer.
+      </p>
+
+      <p> Dalam layanan DNS disediakan alamat IP address bagi setiap host atau email elektronik untuk setiap domain,
+        dengan adanya DNS sebuah pusat layanan jaringan atau lebih dikenal dengan istilah komputer server, bukan hanya
+        memiliki alamat IP address, namun memiliki sebuah nama panggilan yang dinamakan domain.</p>
+
+      <p> Jadi dengan nama domain sobat mudah untuk mengingat dan mengakses sebuah server, contoh paling sederhana
+        adalah
+        sebuah website di internet, semua domain atau alamat Uniform Resource Locator (URL) itu adalah awalnya sebuah
+        alamat IP address berupa nomor (biasa muncul di taskbar sudut kiri bawah), dengan adanya domain atau penamaan
+        dalam bentuk huruf, maka sobat mudah untuk mengingat dan membukanya menggunakan browser.
+      </p>
+
+      <h3>Sejarah DNS</h3>
+      <p>Pertama berdirinya ARPAnet bahwa DNS dulunya belum ada dan komputer hanya menggunakan host.txt yang memertakan
+        nama ke seluruh komputer yang terhubung dengan jaringan. Sampai saat ini masih terdapat file host.txt pada
+        beberapa sistem operasi. Dengan sistem tersebut sangat kesulitan apabila alamat pada suatu host berubah,
+        sehingga setiap host yang akan terhubung harus melakukan update terhadap file host.</p>
+      <figure>
+        <img src=" assets/img/Paul Mockapetris.JPG " alt="paul">
+        <figcaption>Paul Mockapetris</figcaption>
+      </figure>
+
+      <p>Seiring waktu berjalan jaringan komputer semakin berkembang. Paul Mockapetris menemukan DNS pada tahun 1983,
+        saat itu muncul dengan spesifikasi Reques For Comment (RFC) seri 882 dan 883, disusul kemudian tahun 1987 dengan
+        RFC 1034 dan RFC 1035 hingga saat ini. </p>
+
+      <h3>Macam-macam DNS </h3>
+      <p>Pengalamatan sebuah domain di atur sedemikian rupa oleh ARPAnet agar tidak terjadi adanya double alamat,
+        sehingga sebuah jaringan private atau local yang hendak terhubung jaringan, harus memiliki sebuah IP public yang
+        biasa diberikan oleh Internet Service Provider (ISP). Bentuk hostname yang dipakai di internet sangat mirip
+        dengan alamat IP address local. Berikut adalah beberapa domain yang harus dipahami.</p>
+      <br>
+      <h4>1. Generic Top Level Domain (GTLD)</h4>
+      <p>Dimiliki oleh Negara Amerika, namun sering digunakan dan terlihat seperti domain umum dalam alamat internet.
+        Sebagian dari pengguna internet banyak memilih domain level tinggi ini. Semua orang dapat mempunyai domain ini
+        tanpa harus menggunakan persyaratan yang rumit, kecuali beberapa domain seperti edu, mil dan travel.</p>
+      <br>
+      <figcaption>Top level domain</figcaption>
+      <table>
+        <tr>
+          <th>Ekstensi Domain</th>
+          <th>Kegunaan</th>
+        </tr>
+        <tr>
+          <td>.com</td>
+          <td>Digunakan untuk kepentingan komersial atau perusahaan.</td>
+        </tr>
+        <tr>
+          <td>.net</td>
+          <td>Digunakan untuk kepentingan network infrastruktur.</td>
+        </tr>
+        <tr>
+          <td>.org</td>
+          <td>Digunakan untuk kepentingan organisasi.</td>
+        </tr>
+        <tr>
+          <td>.info</td>
+          <td>Digunakan untuk kepentingan informasi website.</td>
+        </tr>
+        <tr>
+          <td>.name</td>
+          <td>Digunakan untuk kepentingan keluarga atau personal.</td>
+        </tr>
+        <tr>
+          <td>.edu</td>
+          <td>Digunakan untuk kepentingan website pendidikan, terbatas hanya untuk pendidikan.</td>
+        </tr>
+        <tr>
+          <td>.mil</td>
+          <td>Digunakan untuk kepentingan website angkatan bersenjata Amerika, terbatas hanya untuk militer.</td>
+        </tr>
+        <tr>
+          <td>.biz</td>
+          <td>Digunakan untuk kepentingan bisnis.</td>
+        </tr>
+        <tr>
+          <td>.tv</td>
+          <td>Digunakan untuk entertainment seperti televisi, radio, majalah.</td>
+        </tr>
+        <tr>
+          <td>.travel</td>
+          <td>Digunakan untuk bisnis pariwisata.</td>
+        </tr>
+        <tr>
+          <td>.xxx</td>
+          <td>Digunakan untuk pornografi (masih diajukan).</td>
+        </tr>
+      </table>
+
+      <h4>2. Country Coded Top Level Domains (CCTLD)</h4>
+      <p>Domain yang dipersiapkan untuk masing-masing negara, beberapa dintaranya nama domain yang disediakan untuk
+        masing-masing negara antara lain</p>
+      <table>
+        <tr>
+          <th>Ekstensi</th>
+          <th>Negara</th>
+        </tr>
+        <tr>
+          <td>.id</td>
+          <td>Indonesia</td>
+        </tr>
+        <tr>
+          <td>.sg</td>
+          <td>Singapura</td>
+        </tr>
+        <tr>
+          <td>.my</td>
+          <td>Malaysia</td>
+        </tr>
+        <tr>
+          <td>.ca</td>
+          <td>Kanada</td>
+        </tr>
+        <tr>
+          <td>.fr</td>
+          <td>Perancis</td>
+        </tr>
+        <tr>
+          <td>.jp</td>
+          <td>Jepang</td>
+        </tr>
+        <tr>
+          <td>.nl</td>
+          <td>Belanda</td>
+        </tr>
+        <tr>
+          <td>.th</td>
+          <td>Thailand</td>
+        </tr>
+        <tr>
+          <td>.au</td>
+          <td>Australia</td>
+        </tr>
+        <tr>
+          <td>.uk</td>
+          <td>Inggris</td>
+        </tr>
+      </table>
+      <p>Terdapat juga sub level domain yang dimiliki Indonesia diantaranya :</p>
+      <table>
+        <tr>
+          <th>Ekstensi</th>
+          <th>Kegunaan</th>
+        </tr>
+        <tr>
+          <td>.or.id</td>
+          <td>Organisasi</td>
+        </tr>
+        <tr>
+          <td>.co.id</td>
+          <td>Komersial</td>
+        </tr>
+        <tr>
+          <td>.go.id</td>
+          <td>Pemerintahan</td>
+        </tr>
+        <tr>
+          <td>.ac.id</td>
+          <td>Pendidikan Tinggi</td>
+        </tr>
+        <tr>
+          <td>.sch.id</td>
+          <td>Sekolah</td>
+        </tr>
+        <tr>
+          <td>.net.id</td>
+          <td>Provider</td>
+        </tr>
+        <tr>
+          <td>.web.id</td>
+          <td>Umum</td>
+        </tr>
+        <tr>
+          <td>.mil.id</td>
+          <td>Instansi Pemerintah</td>
+        </tr>
+      </table>
+
+      <h3>Fungsi DNS Server</h3>
+      <p>DNS server memiliki fungsi sebagai database server yang menyimpan alamat IP address untuk memberikan nama pada
+        hostname. Ketika sobat mengetikan nama domain atau alamat URL seperti google.com, secara tidak langsung sobat
+        mengetikan sebuah IP address dengan nomor 8.8.8.8. Dari contoh tersebut maka terdapat 2 fungsi dari DNS server :
+      </p>
+
+      <p> 1. DNS server berfungsi untuk melakukan modulator atau menterjemahkan sebuah alamat IP address, mejadi sebuah
+        nama domain.<br>
+        2. DNS digunakan untuk mengetahui data secara lengkap mengenai serbuah hostname yang ada di internet baik alamat
+        IP address, alamat lokasi server dan waktu hostname digunakan.</p>
+
+      <h3>Kelebihan dan Kekurangan DNS Server</h3>
+      <p>Dari fungsi yang telah diketahui bersama, terdapat kelebihan dan kekurangan yang harus diketahui :</p>
+      <h4>Kelebihan DNS server</h4>
+      <p>1. Mempermudah, artinya DNS sangat mempermudah sobat untuk membuka alamat hostname, cukup mengingat sebuat nama
+        dengan tidak mengingat berapa alamat IP address hostname tersebut.<br>
+        2. Konsisten, artinya alamat IP address pada sebuah komputer dapat berubah, namun dengan adanya DNS hostname
+        tidak perlu melakukan update.<br>
+        3. Sederhana, artinya mudah sekali untuk dikonfigurasi </p>
+
+      <h4>Kelemahan DNS Server</h4>
+      <p>Sebagai user tidak dapat menggunakan nama lebih dari satu untuk melakukan pencarian domain, baik di jaringan
+        local maupun di jaringan global (internet)</p>
+
+      <h3>Aplikasi DNS Server</h3>
+      <p>Beberapa aplikasi yang dapat dipergunakan sebagai DNS server pada beberapa sistem operasi diantaranya :</p>
+      <ol>1. Berkeley Internet Name Domain (BIND) : sebuah aplikasi DNS server yang banyak digunakan di jaringan global,
+        menggunakan sistem operasi unix atau linux.<br>
+        2. Mara DNS : Perangkat lunak DNS yang gratis dibuat oleh Sam Trenholme, namun aplikasi ini tidak banyak yang
+        menggunakan<br>
+        3. DjbDNS : Kumpulan aplikasi DNS termasuk tinydns yang digunakan pada awal tahun 2004 dirancang oleh Daniel J
+        Bernstein.<br>
+        4. Name Server Daemon (NSD) : NSD server merupakan perangkat lunak bebas otoritatif yang diciptakan oleh NLNet
+        Labs.<br>
+        5. Unbound : Diciptakan juga oleh NLNet Labs dan sempat ditawarkan ke Linux yang terintegrasi dengan protocol
+        routing quagga pada peralatan Dell/TCPWave.<br>
+        6. Power DNS : Perangkat lunak server gratis dengan beberapa tempat penyimpanan data dan fitur load
+        balancing.<br>
+        7. Microsoft DNS : Diciptakan oleh Microsoft dan di pasang pada sistem operasi Windows versi server seperti
+        Windows 2000 server, 2003 server, 2008 server, 2012 server dan 2016 server.</ol>
+
+      <h4>Cara Kerja DNS Server</h4>
+      <figure>
+        <img src="assets/img/cara kerja dns.jpg" alt="cara kerja dns">
+      </figure>
+
+      <p>Sebelum masuk ke pembehasan cara kerja DNS, sebelumnya sobat pahami terlebih dahulu bahwa DNS dikelola dengan 3
+        komponen yaitu :</p>
+      <ol>1. DNS resolver : komputer client yang disebut pengguna, melakukan permintaan DNS dari sebuah sistem
+        operasi<br>
+        2. Recursive DNS Server : pihak yang melakukan pencarian melalui DNS dan berdasarkan permintaan resolver,
+        selanjutnya diberikan jawaban pada resolver tersebut.<br>
+        3. Authoritative DNS Server : pihak yang memberikan respon setelah recursive akan melakukan pencarian dan
+        selanjutnya memberikan respon atau jawaban yang didelegasikan ke DNS server lainnya.<ol>
+
+          <p>Pada prosesnya DNS server memerlukan program client yang bernama resolcer untuk menghubungkan setiap
+            komputer
+            user dengan server DNS. Resolver ini adalah sebuah web browser dan mail client. Berikut adalah cara kerja
+            dari DNS server :</p>
+          1. DNS resolver akan melaksanakan pencarian alamat host pada file HOSTS, apabila alamat host yang dicari
+          ditemukan,
+          maka akan diberikan dan proses selesai.<br>
+          2. DNS resolver melakukan pencarian pada cache yang sebelumnya dibuat resolver sendiri untuk menampung
+          permintaan
+          sebelumnya, sehingga tidak lagi mengambil dari data baru.<br>
+          3. DNS resolver melakukan pencarian pada alamat server DNS yang ditentukan oleh user<br>
+          4. Server DNS berkewajiban untuk mencari nama domain pada cache yang dimilikinya.<br>
+          5. Jika nama domain yang dicari oleh server DNS ditemuka, maka pencarian dilakukan dengan melihat file
+          database
+          yang dimiliki oleh server.<br>
+          6. Jika tidak ditemukan maka pencarian akan dilakukan langsung dengan server yang dimaksud, dan hasilnya akan
+          di
+          tampilkan pada browser user.<br>
+        </ol>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Materi Pembelajaran. Semua Hak Dilindungi.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

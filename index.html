@@ -1,16 +1,358 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!--=============== META ===============-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" type="image/x-icon" href="https://telegra.ph/file/22b64cff36b5d276f6816.png">
+    <link rel="apple-touch-icon" href="https://telegra.ph/file/22b64cff36b5d276f6816.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!--=============== TITLE WEB ===============-->
+    <title> Rivaldy | Portfolio </title>
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
+
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="/" class="nav__logo">Rivaldy \ Ryy~</a>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class='bx bx-home-alt'></i>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class='bx bx-user'></i>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#edu" class="nav__link">
+                            <i class='bx bxs-graduation'></i>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class='bx bx-book'></i>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#work" class="nav__link">
+                            <i class='bx bx-briefcase'></i>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class='bx bx-message-square-dots'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Theme Change Button -->
+            <i class='bx bx-moon change-theme' id="theme-button"></i>
+        </nav>
+    </header>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+        <!--=============== HOME ===============-->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <span class="home__greeting">
+                        NIM : C2C023067 / REGB.
+                    </span>
+                    <h1 class="home__name">
+                        RIZKY RIVALDY
+                    </h1>
+                    <h3 class="home__education">
+                        Universitas Muhammadiah Semarang
+                    </h3>
+                    <img src="" alt="">
+                    <div class="home__buttons">
+                        <a href="#about" class="button">Tentang Saya</a>
+                    </div>
+                </div>
+
+                <div class="home__quote">
+                    <h6>"Website ini di peruntukan untuk Tugas KOMPUTER JARINGAN,berisi materi" dan video presentasi.
+                    </h6>
+                </div>
+
+                <div class="home__social">
+                    <a href="https://discord.com" class="home__social-link">
+                        <i class='bx bxl-discord'></i>
+                    </a>
+                    <a href="https://github.com/" class="home__social-link">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                    <a href="https://www.instagram.com/_rivaldy086_" class="home__social-link">
+                        <i class='bx bxl-instagram'></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== ABOUT ===============-->
+        <section class="about section" id="about">
+            <span class="section__subtitle">Intro</span>
+            <h2 class="section__title">Tentang Saya</h2>
+
+            <div class="about__container container grid">
+                <div class="about__wrapper">
+                    <div class="about__handle">
+                        <img src="assets/img/WhatsApp Image 2024-12-22 at 09.05.17.jpeg" alt="" class="about__img">
+                    </div>
+                </div>
+
+                <div class="about__data">
+
+                    <p class="about__description">
+                        Nama Saya Rzk Rivaldy . Saya tinggal di Wonogiri-jawa tengah. Saya seorang pemula yang ingin
+                        bisa.
+                    </p>
+                    <a href="#contact" class="button">Kontak Saya</a>
+                </div>
+        </section>
+        <!--=============== EDU ===============-->
+        <section class="edu section" id="edu">
+            <span class="section__subtitle">
+                Di bagian ini adalah materi beserta tugas yang saya kerjakan selama semester 3
+            </span>
+            <h2 class="section__title">Materi</h2>
+            <div class="materi-body">
+                <div class="materi-container">
+                    <!-- Kartu Materi -->
+                    <div class="materi-card">
+                        <a href="materi1.html">
+                            <img src="assets/img/tambhan/Screenshot 2024-12-23 095639.png" alt="Materi 1"
+                                class="materi-img">
+                            <h3 class="materi-title">Konsep Dasar Komunikasi Data</h3>
+                        </a>
+                    </div>
+                    <div class="materi-card">
+                        <a href="materi2.html">
+                            <img src="assets/img/tambhan/Screenshot 2024-12-23 132938.png" alt="Materi 2"
+                                class="materi-img">
+                            <h3 class="materi-title">TCP/IP</h3>
+                        </a>
+                    </div>
+                    <div class="materi-card">
+                        <a href="materi3.html">
+                            <img src="assets/img/tambhan/Screenshot 2024-12-23 133021.png" alt="Materi 3"
+                                class="materi-img">
+                            <h3 class="materi-title">IP (Internet Protocol)</h3>
+                        </a>
+                    </div>
+                    <div class="materi-card">
+                        <a href="materi4.html">
+                            <img src="assets/img/materi3/Screenshot 2024-12-24 204855.png" alt="Materi 4"
+                                class="materi-img">
+                            <h3 class="materi-title">MODEL OSI</h3>
+                        </a>
+                    </div>
+                    <div class="materi-card">
+                        <a href="materi5.html">
+                            <img src="assets/img/KKDNS.png" alt="Materi 5" class="materi-img">
+                            <h3 class="materi-title">DNS <br>(Domain Name System)</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== SKILLS ===============-->
+        <section class="skills section" id="skills">
+            <span class="section__subtitle"> </span>
+            <h2 class="section__title">PENGUMPULA TUGAS</h2>
+
+            <div class="skills__container container grid">
+                <div class="skills__content">
+                    <h3 class="skills__title">Tugas Semester 3 Jaringan Komputer</h3>
+
+                    <div class="skills__box">
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <center><i class='bx bxl-css3'></i>
+                                    <div>
+                                        <h3 class="skills__name">saya lampirkan link drive yang berisi tugas KomJar</h3>
+                                        <p><i>https://drive.google.com/drive/folders/1HNIoRfcZPBIQPgK9NLihd0n9TPGp6eeL?usp=sharing</i>
+                                        </p>
+                                        <figcaption>copy and paste my site</figcaption>
+                                </center>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <!--=============== WORK ===============-->
+        <section class="work section" id="work">
+            <span class="section__subtitle">PENGUMPULAN </span>
+            <h2 class="section__title">VIDIO PRESENTASI</h2>
+
+
+            <div class="work__container container grid">
+                <div class="work__card mix apps sites">
+                    <figure>
+                        <img src="assets/img/Screenshot 2024-12-26 230106.png" alt="">
+                    </figure>
+
+
+                    <!-- <img src=" ./assets/img/biolink.png" alt="" class="work__img"> -->
+
+                    <h3 class="work__title">Video Presentasi </h3>
+
+                    <a href="https://youtu.be/AayThNaPwwQ" target="_blank" class="work__button">
+                        click here
+                        <i class='bx bx-right-arrow-alt work__icon'></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== CONTACT ===============-->
+        <section class="contact section" id="contact">
+            <span class="section__subtitle">Info Lengkap</span>
+            <h2 class="section__title">Kontak Saya</h2>
+
+            <div class="contact__container container grid">
+
+                <div class="contact__info">
+                    <div class="contact__card">
+                        <i class='bx bx-mail-send contact__card-icon'></i>
+                        <h3 class="contact__card-title">Email</h3>
+                        <span class="contact__card-data">rivaldyriskyi86@gmail.com</span>
+
+                        <a href="mailto:kibieptr@lynninc.cloud" target="_blank" class="contact__button">
+                            Kirim Email
+                            <i class='bx bx-right-arrow-alt contact__button-icon'></i>
+                        </a>
+                    </div>
+                    <div class="contact__card">
+                        <i class='bx bxl-whatsapp contact__card-icon'></i>
+                        <h3 class="contact__card-title">Whatsapp</h3>
+                        <span class="contact__card-data">+62 896-2110-xxxx</span>
+
+                        <a href="https://api.whatsapp.com/send/?phone=6289621104071&text=Halo" target="_blank"
+                            class="contact__button">
+                            Kirim Pesan
+                            <i class='bx bx-right-arrow-alt contact__button-icon'></i>
+                        </a>
+                    </div>
+                    <div class="contact__card">
+                        <i class='bx bxl-instagram contact__card-icon'></i>
+                        <h3 class="contact__card-title">Instagram</h3>
+                        <span class="contact__card-data">@_rivaldy086</span>
+
+                        <a href="https://instagram.com/_rivaldy086/" target="_blank" class="contact__button">
+                            Kirim Pesan
+                            <i class='bx bx-right-arrow-alt contact__button-icon'></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact__content">
+                    <h3 class="contact__title">Saran</h3>
+
+                    <form action="https://formspree.io/f/mpzgprbp" class="contact__form" name="contact" method="POST"
+                        data-netlify="true">
+                        <div class="contact__form-div">
+                            <label for="" class="contact__form-tag">Nama</label>
+                            <input type="text" placeholder="Example: Lynn" class="contact__form-input">
+                        </div>
+                        <div class="contact__form-div">
+                            <label for="" class="contact__form-tag">Email</label>
+                            <input type="email" name="email" placeholder="yourname@example.com"
+                                class="contact__form-input">
+                        </div>
+                        <div class="contact__form-div contact__form-area">
+                            <label for="" class="contact__form-tag">Pesan</label>
+                            <textarea name="message" cols="30" rows="10" placeholder="Tulis Pesan"
+                                class="contact__form-input "></textarea>
+                        </div>
+
+                        <button class="button" type="submit">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer">
+        <div class="footer__container container">
+            <h1 class="footer__title">Ryy~</h1>
+
+            <ul class="footer__list">
+                <li>
+                    <a href="#about" class="footer__link">About</a>
+                </li>
+                <li>
+                    <a href="#work" class="footer__link">Projects</a>
+                </li>
+            </ul>
+
+            <ul class="footer__social">
+                <!-- <a href="https://github.com/lynnxha" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-github'></i> 
+                </a> -->
+                <a href="https://discord.gg/nRwJqT9XCf" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-discord'></i>
+                </a>
+                <a href="https://www.instagram.com/_rivaldy086/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+            </ul>
+
+            <span class="footer__copy" id="copyright"></span>
+        </div>
+    </footer>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="./assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+
+    <!--=============== MIXITUP FILTER ===============-->
+    <script src="./assets/js/mixitup.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="./assets/js/main.js"></script>
+
+    <!--=============== SCRIPT TAMBAHAN FOOTER ===============-->
+    <script>
+        const copyrightSpan = document.getElementById("copyright");
+
+        const currentYear = new Date().getFullYear();
+
+        copyrightSpan.innerHTML = `&copy; rival ${currentYear}. All Rights reserved.`;
+    </script>
 </body>
 
 </html>

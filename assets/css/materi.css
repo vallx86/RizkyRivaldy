@@ -1,0 +1,94 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+/* Header Styles */
+header {
+  background-color: #1e293b;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  color: #38bdf8;
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Main Content Styles */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.materi h2 {
+  font-size: 1.8rem;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.materi h3 {
+  font-size: 1.5rem;
+  color: #7dd3fc;
+  margin-bottom: 10px;
+}
+
+.materi p {
+  margin: 10px 0;
+  text-align: justify;
+}
+
+figure {
+  margin: 20px 0;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #64748b;
+  border-radius: 5px;
+}
+
+figcaption {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #1e293b;
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #;
+}

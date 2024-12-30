@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Pembelajaran</title>
+  <link rel="stylesheet" href="./assets/css/materi.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Internet Protocol (IP)</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="materi">
+      <h2>IP</h2>
+
+      <h2>A. Addressing</h2>
+      <p>Pada lapisan jaringan (Network Layer), mekanisme pengalamatan (addressing) mengacu pada Logical Address dan
+        datanya bernama Package. Lapisan ini akan menterjemahkan alamat logika sebuah host menjadi sebuah alamat fisik.
+        Lapisan ini juga bertanggung jawab untuk mengatur rute yang akan dilalui sebuah paket yang dikirim agar dapat
+        sampai pada tujuan.</p>
+
+      <h3>1. Pengalamatan pada Network Layer</h3>
+      <p>Pengalamatan pada network layer adalah berupa penomoran perangkat yang terhubung dalam jaringan, seperti halnya
+        nomor telepon yang terdiri dari kode area (alamat network) dan nomor telepon (alamat host).</p>
+
+      <h4>a. Logical Addressing & Physical Addressing</h4>
+      <p>Bila pada lapisan data link diimplementasikan physical addressing untuk penangan pengalamatan atau addressing
+        secara lokal, maka pada lapisan network problematika addressing untuk lapisan network bisa mencakup lokal dan
+        antar jaringan atau network. Pada lapisan network ini logical address ditambahkan pada paket yang datang dari
+        lapisan data link.</P>
+
+      <p>Alamat logika digunakan untuk menentukan sebuah lokasi jaringan, sedangkan alamat fisik digunakan untuk
+        menentukan perangkat tujuan. Dalam proses routing alamat logika akan selalu tetap tetapi alamat fisik akan
+        berubah sesuai dengan kebutuhan. Alamat fisik bisa dianalogikan sebagai nama anda, sedangkan alamat logika
+        sebagai alamat kotak pos anda. Jika anda pindah rumah maka nama anda tidak akan pernah berubah tetapi alamat
+        kotak pos anda akan berubah. Jadi jika anda memindahkan komputer dari sebuah jaringan ke jaringan lain maka
+        alamat fisik tidak akan pernah berubah, sedangkan anda harus mengganti alamat logika sesuai dengan jaringan yang
+        baru. Alamat fisik adalah alamat MAC (alamat yang sudah terdapat di NIC yang tidak dapat dirubah), sedangkan
+        alamat logika adalah alamat IP(Blank 2006).</p>
+
+      <h4>b. Internetworking Protokol (IP)</h4>
+      <p>IP adalah satu-satunya protokol layer 3 yang digunakan untuk membawa data user berlalu-lalang melintasi network
+        TCP/IP.</p>
+
+      <h5>1) Panjang Alamat</h5>
+      <p>Alamat Internet adalah 32 bits panjangnya: ini memberikan kita ada sebanyak 232 alamat internet. Alamat-alamat
+        ini disebut alamat IPv4 (IP version 4), atau seringkali hanya disebut IP saja. IPv4 adalah versi IP yang paling
+        banyak digunakan saat ini. IPv6 masih dalam tahap pengembangan dan belum banyak dipakai. Beberapa karakteristik
+        IP antara lain:</p>
+      <h6>a) Connectionless</h6> – tidak perlu menjalin koneksi sebelum pengiriman data.
+
+      <h6>b) Best Effort (Unreliable)</h6> – tidak ada fitur-fitur untuk menjamin data sampai ke tujuan.
+
+      <h6>c) Media Independent </h6>– bisa beroperasi pada media apapun yang digunakan pada layer fisik, ethernet, fiber
+      optik,maupun wireless.IP
+      <p>mengenkapsulasi segmen/datagram dari layer transport dengan IP Header agar data dapat dikirimkan ke mesin
+        tujuan. Router membaca informasi pada IP Header ini untuk melihat alamat network yang dituju oleh paket tersebut
+        kemudian akan melakukan proses routing berdasarkan alamat network tersebut.</p>
+      <br>
+      Ada beberapa fields utama yang perlu kita perhatikan pada IP Header:<br>
+
+      a) IP Source address, IP address mesin komputer yang dituju (penerima).
+
+      b) IP Destination address, IP address mesin komputer pengirim.<br>
+
+      c) Time-to-Live(TTL),<br>
+
+      d) Bilangan biner yang menunjukkan ‘sisa hidup’ sebuah paket. Nilai ini akan selalu dikurangi 1 satuan setiap kali
+      paket melewati sebuah router (hop).<br>
+
+      e) Ketika nilai TTL mencapai angka = 0, maka paket akan di drop oleh router.<br>
+
+      f) Mekanisme ini untuk mencegah terjadinya routing loop, sebuah problem routing yang menyebabkan paket
+      terus-menerus berputar dalam network tanpa henti.<br>
+
+      g) Type-of-Service (ToS), Digunakan sebagai mekanisme Quality-of-Service (QoS) untuk menentukan prioritas setiap
+      paket.<br>
+
+      h) Protocol, Menunjukkan tipe protokol apa yang ada pada segmen yang akan dienkapsulasi.<br>
+
+      i) Fragment Offset, jika terjadi proses fragmentation pada layer network, maka field berisi 13 bit ini digunakan
+      untuk mengidentifikasi susunan fragment-fragment paket untuk proses rekonstruksi ulang paket.<br>
+      <br>
+      Beberapa field yang lain memiliki peran sebagai berikut:<br>
+
+      a) Flag, Field 3 bit digunakan untuk mengontrol ada tidaknya proses fragmentation.<br>
+
+      b) Version, Versi IP yang digunakan, IPv4 atau IPv6.<br>
+
+      c) Internet Header Length, Menunukkan ukuran header paket.<br>
+
+      d) Packet Length, Menunjukkan ukuran paket secara keseluruhan termasuk header.<br>
+
+      e) Header checksum, Mengecek error pada header paket. Paket akan di drop jika terdeteksi error pada header.<br>
+      <p>IPv4 mempunyai yang namanya Address space, yaitu total jumlah alamat yang digunakan protocol. Jika protocol
+        memiliki N bits, untuk mendefinisikan sebuah alamat, maka address space-nya adalah 2N karena setiap bit seperti
+        yang kita ketahui hanya memiliki 2 nilai yaitu 1 atau 0.</p>
+
+      <p>Panjang totalnya adalah sebanyak 32-bit, dan secara teoritis dapat mengalamati hingga 4 miliar host komputer
+        atau
+        lebih tepatnya 4.294.967.296 host di seluruh dunia, jumlah host tersebut didapatkan dari 256 (didapatkan dari 8
+        bit) dipangkat 4(karena terdapat 4 oktet) sehingga nilai maksimal dari alamt IP versi 4 tersebut adalah
+        255.255.255.255 dimana nilai dihitung dari nol sehingga nilai nilai host yang dapat ditampung adalah
+        256x256x256x256=4.294.967.296 host, bila host yang ada di seluruh dunia melebihi kuota tersebut maka dibuatlah
+        IP
+        versi 6 atau IPv6. Contoh alamat IP versi 4 adalah 192.168.0.3.</p>
+
+      <p>Notasi umum untuk menunjukan IPv4 address: yaitu Notasi Binary dan Notasi Dotted Desimal. Notasi Binary adalah
+        contoh: 10000011 01101100 01111010 11001100, dan Notasi Dotted Desimal adalah contoh: 131.108.122.204. untuk
+        lebih
+        mudah dibaca maka Pengalamatan Internet dalam IPv4 bentuk binary kemudian dikonversi menjadi notasi dotted
+        decimal
+        (Blank 2006).</p>
+      Adapun cara konversinya adalah sebagai berikut:<br>
+
+      <figure>
+        <img src="assets/img/materi3/02.png" , alt="konversi biner">
+        <figcaption>Gambar 1. Konversi Alamat IP biner ke angka desimal</figcaption>
+      </figure>
+      <p>Alamat IP versi 4 umumnya diekspresikan dalam notasi desimal bertitik (dotted-decimal notation), yang dibagi ke
+        dalam empat buah oktet berukuran 8-bit. Dalam beberapa buku referensi, format bentuknya adalah w.x.y.z. Karena
+        setiap oktet berukuran 8-bit, maka nilainya berkisar antara 0 hingga 255 (meskipun begitu, terdapat beberapa
+        pengecualian nilai) .</p>
+
+      <p>Alamat IP yang dimiliki oleh sebuah host dapat dibagi dengan menggunakan subnet mask jaringan ke dalam dua buah
+        bagian, yakni:<br>
+
+        1) Network Identifier/NetID atau Network Address (alamat jaringan) yang digunakan khusus untuk
+        mengidentifikasikan alamat jaringan di mana host berada.<br><br>
+
+        2) Alamat network identifier tidak boleh bernilai 0 atau 255.<br><br>
+
+        3) Host Identifier/HostID atau Host address (alamat host) yang digunakan khusus untuk mengidentifikasikan alamat
+        host (dapat berupa workstation, server atau sistem lainnya yang berbasis teknologi TCP/IP) di dalam jaringan.
+        Nilai host identifier tidak boleh bernilai 0 atau 255 dan harus bersifat unik di dalam network identifier/segmen
+        jaringan di mana ia berada.</p><br>
+
+      <h5>2) Jenis-jenis Alamat IP</h5>
+      <p> Jenis-jenis alamat: Alamat IPv4 terbagi menjadi beberapa jenis, yakni sebagai berikut (Blank 2006):<br>
+
+        a) Alamat Unicast, merupakan alamat IPv4 yang ditentukan untuk sebuah antarmuka jaringan yang dihubungkan ke
+        sebuah Internetwork IP. Alamat unicast digunakan dalam komunikasi point-to-point atau one-to-one.<br><br>
+
+        b) Alamat Broadcast, merupakan alamat IPv4 yang didesain agar diproses oleh setiap node IP dalam segmen jaringan
+        yang sama. Alamat broadcast digunakan dalam komunikasi one-to-everyone.<br><br>
+
+        c) Alamat Multicast, merupakan alamat IPv4 yang didesain agar diproses oleh satu atau beberapa node dalam segmen
+        jaringan yang sama atau berbeda. Alamat multicast digunakan dalam komunikasi one-to-many.</p>
+
+      <h5>3) Kelas-Kelas IP</h5>
+      <p>Kelas-kelas alamat : Alamat IP versi 4 dibagi ke dalam beberapa kelas, dilihat dari oktet pertamanya, seperti
+        terlihat pada tabel. Sebenarnya yang menjadi pembeda kelas IP versi 4 adalah pola biner yang terdapat dalam
+        oktet pertama (utamanya adalah bit-bit awal/high-order bit), tapi untuk lebih mudah mengingatnya, akan lebih
+        cepat diingat dengan menggunakan representasi desimal (Blank 2006).</p>
+      <p>
+        a) Kelas A : Alamat-alamat kelas A diberikan untuk jaringan skala besar. Nomor urut bit tertinggi di dalam
+        alamat IP kelas A selalu diset dengan nilai 0 (nol). Tujuh bit berikutnya—untuk melengkapi oktet pertama—akan
+        membuat sebuah network identifier. 24 bit sisanya (atau tiga oktet terakhir) merepresentasikan host identifier.
+        Ini mengizinkan kelas A memiliki hingga 126 jaringan, dan 16,777,214 host tiap jaringannya. Alamat dengan oktet
+        awal 127 tidak diizinkan, karena digunakan untuk mekanisme Interprocess Communication (IPC) di dalam mesin yang
+        bersangkutan.<br><br>
+
+        b) Kelas B: Alamat-alamat kelas B dikhususkan untuk jaringan skala menengah hingga skala besar. Dua bit pertama
+        di dalam oktet pertama alamat IP kelas B selalu diset ke bilangan biner 10. 14 bit berikutnya (untuk melengkapi
+        dua oktet pertama), akan membuat sebuah network identifier. 16 bit sisanya (dua oktet terakhir)
+        merepresentasikan host identifier. Kelas B dapat memiliki 16,384 network, dan 65,534 host untuk setiap
+        network-nya.<br><br>
+
+        c) Kelas C: Alamat IP kelas C digunakan untuk jaringan berskala kecil. Tiga bit pertama di dalam oktet pertama
+        alamat kelas C selalu diset ke nilai biner 110. 21 bit selanjutnya (untuk melengkapi tiga oktet pertama) akan
+        membentuk sebuah network identifier. 8 bit sisanya (sebagai oktet terakhir) akan merepresentasikan host
+        identifier. Ini memungkinkan pembuatan total 2,097,152 buah network, dan 254 host untuk setiap
+        network-nya.<br><br>
+
+        d) Kelas D: Alamat IP kelas D disediakan hanya untuk alamat-alamat IP multicast, namun berbeda dengan tiga kelas
+        di atas. Empat bit pertama di dalam IP kelas D selalu diset ke bilangan biner 1110. 28 bit sisanya digunakan
+        sebagai alamat yang dapat digunakan untuk mengenali host. Untuk lebih jelas mengenal alamat ini, lihat pada
+        bagian Alamat Multicast IPv4 (PRASIMAX 2002).<br><br>
+
+      <figcaption>Tabel 4. Kelas Alamat IP</figcaption>
+      <table>
+        <tr>
+          <th>Kelas</th>
+          <th>Oktet Pertama (Desimal)</th>
+          <th>Oktet Pertama (Biner)</th>
+          <th>Deskripsi</th>
+        </tr>
+        <tr>
+          <td>Kelas A</td>
+          <td>1–126</td>
+          <td>0xxx xxxx</td>
+          <td>Alamat unicast untuk jaringan skala besar</td>
+        </tr>
+        <tr>
+          <td>Kelas B</td>
+          <td>128–191</td>
+          <td>10xx xxxx</td>
+          <td>Alamat unicast untuk jaringan skala menengah hingga skala besar</td>
+        </tr>
+        <tr>
+          <td>Kelas C</td>
+          <td>192–223</td>
+          <td>110x xxxx</td>
+          <td>Alamat unicast untuk jaringan skala kecil</td>
+        </tr>
+        <tr>
+          <td>Kelas D</td>
+          <td>224–239</td>
+          <td>1110 xxxx</td>
+          <td>Alamat multicast (bukan alamat unicast)</td>
+        </tr>
+        <tr>
+          <td>Kelas E</td>
+          <td>\240–255</td>
+          <td>1111 xxxx</td>
+          <td>Direservasikan;umumnya digunakan sebagai alamat percobaan (eksperimen); (bukan alamat unicast)</td>
+        </tr>
+      </table>
+      <br>
+      e) Kelas E: Alamat IP kelas E disediakan sebagai alamat yang bersifat "eksperimental" atau percobaan dan
+      dicadangkan untuk digunakan pada masa depan. Empat bit pertama selalu diset kepada bilangan biner 1111. 28 bit
+      sisanya digunakan sebagai alamat yang dapat digunakan untuk mengenali host (PRASIMAX 2002).<br>
+      <br>
+      <figcaption>Tabel 5. Jumlah host pada setiap Kelas IP V4</figcaption>
+      <table>
+        <caption>Kelas Alamat IP</caption>
+        <thead>
+          <tr>
+            <th>Kelas Alamat</th>
+            <th>Nilai Oktet Pertama</th>
+            <th>Bagian untuk <em>Network Identifier</em></th>
+            <th>Bagian untuk <em>Host Identifier</em></th>
+            <th>Jumlah Jaringan Maksimum</th>
+            <th>Jumlah <em>Host</em> Maksimum per Jaringan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kelas A</td>
+            <td>1-126</td>
+            <td>W</td>
+            <td>X.Y.Z</td>
+            <td>126</td>
+            <td>16,777,214</td>
+          </tr>
+          <tr>
+            <td>Kelas B</td>
+            <td>128-191</td>
+            <td>W.X</td>
+            <td>Y.Z</td>
+            <td>16,384</td>
+            <td>65,534</td>
+          </tr>
+          <tr>
+            <td>Kelas C</td>
+            <td>192-223</td>
+            <td>W.X.Y</td>
+            <td>Z</td>
+            <td>2,097,152</td>
+            <td>254</td>
+          </tr>
+          <tr>
+            <td>Kelas D</td>
+            <td>224-239</td>
+            <td>Multicast IP Address</td>
+            <td>Multicast IP Address</td>
+            <td>Multicast IP Address</td>
+            <td>Multicast IP Address</td>
+          </tr>
+          <tr>
+            <td>Kelas E</td>
+            <td>240-255</td>
+            <td>Dicadangkan; eksperimen</td>
+            <td>Dicadangkan; eksperimen</td>
+            <td>Dicadangkan; eksperimen</td>
+            <td>Dicadangkan; eksperimen</td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+
+      <h5> 4) IP Versi 6</h5>
+      <p>nternet Protocol Versi 6 (IPv6) adalah protokol Internet versi baru yang didesain sebagai pengganti dari
+        Internet protocol versi 4 (IPv4) yang didefinisikan dalam RFC 791. IPv6 yang memiliki kapasitas address
+        raksasa (128 bit), mendukung penyusunan address secara terstruktur, yang memungkinkan Internet terus
+        berkembang dan menyediakan kemampuan routing baru yang tidak terdapat pada IPv4. IPv6 memiliki tipe address
+        anycast yang dapat digunakanuntuk pemilihan route secara efisien. Selain itu IPv6 juga dilengkapi oleh
+        mekanisme penggunaan address secara local yang memungkinkan terwujudnya instalasi secara Plug&Play, serta
+        menyediakan platform bagi cara baru pemakaian Internet, seperti dukungan terhadap aliran datasecara real-time,
+        pemilihan provider, mobilitas host, end-to-end security, ataupun konfigurasi otomatis (Fruhlinger 2022).</p>
+      <figure>
+        <img src="assets/img/materi3/Screenshot 2024-12-23 003110.png" alt="ipv6">
+        <figcaption>Gambar 48. IP Adress Ipv6 dalam heksadesimal</figcaption>
+      </figure>
+
+      <h2>B. Subnetting</h2>
+      <p>Salah satu peran network layer adalah menyediakan mekanisme pengalamatan (IP address) dan juga pengelompokan
+        device ke dalam satu network spesifik. Network yang besar juga bisa kita pecah lagi menjadi beberapa kelompok
+        sub-network/subnet yang lebih kecil, proses ini kita kenal sebagai subnetting. Pengelompokan ini dapat
+        dilakukan berdasarkan lokasi, manfaat dan tujuan network, kepemilikan dan kewenangan, dan lain-lain. Sedangkan
+        manfaat pengelompokan ini antara lain (Alani 2014):<br>
+        1) Performa, semakin besar ukuran sebuah jaringan komputer akan menghasilkan semakin banyak trafik broadcast,
+        semakin banyak trafik broadcast semakin berkurang jumlah bandwidth yang bisa kita pakai untuk komunikasi
+        data.<br>
+
+        2) Keamanan, sebuah divisi kerja seharusnya berada dalam network tersendiri terpisah dari divisi kerja yang
+        lain.</p>
+
+      <h4>1. Manajemen Subnetting</h4>
+      <p>Dalam mengelola jaringan sub-jaringan, atau subnet, adalah pembagian secara yang terlihat secara fisik dari
+        IP jaringan.Praktik membagi jaringan menjadi dua atau lebih jaringan disebut subnetting (Blank 2006).<br>
+
+        fungsi subnetting antara lain sebagai berikut:<br>
+
+        a) Mengurangi lalu-lintas jaringan, sehingga data yang lewat di perusahaan tidak akan bertabrakan (collision)
+        atau macet.<br>
+
+        b) Teroptimasinya unjuk kerja jaringan.<br>
+
+        c) Pengelolaan yang disederhanakan<br>
+
+        d) Membantu pengembangan jaringan ke arah jarak geografis yang menjauh.</p>
+
+      <p> Semua komputer yang termasuk dalam sebuah subnet dialamatkan dengan bit-group umum, identik, dan paling
+        signifikan dalam alamat IP mereka.Hal ini menyebabkan pembagian logis dari alamat IP ke dua bidang, jaringan
+        atau routing prefix dan sisa field atau pengenal host.Field sisanya adalah pengidentifikasi untuk host
+        tertentu atau antarmuka jaringan.Hal ini bisa kita lihat pada Subnet Mask.</p>
+      <p>Subnet Mask adalah istilah teknologi informasi yang mengacu kepada angka perduaan (binary) 32 bit yang
+        digunakan untuk membedakan ID jaringan (network ID) dengan ID induk, yakni: menunjukkan letak suatu induk,
+        entah berada di jaringan setempat atau di jaringan luar. RFC 950 mengartikan penggunaan sebuah pola
+        upajaringan yang disebut juga sebagai sebuah pola alamat (address mask) sebagai sebuah nilai 32-bit yang
+        digunakan untuk membedakan pengidentifikasi jaringan (network identifier) dari pengidentifikasi induk (host
+        identifier) dalam sebuah alamat IP. Bit-bit pola jaringan diberi arti yaitu semua bit yang ditujukan agar
+        digunakan oleh pengidentifikasi jaringan diatur ke nilai 1 dan semua bit yang ditujukan agar digunakan oleh
+        pengidentifikasi induk diatur ke nilai 0.</p>
+      <p>Setiap induk (host) di dalam sebuah jaringan yang menggunakan TCP/IP membutuhkan sebuah pola upajaringan
+        meskipun berada di dalam sebuah jaringan dengan satu segmen saja.</p>
+      <p>da dua metode yang dapat digunakan untuk merepresentasikan subnet mask, yaitu Notasi Besimal Bertitik dan
+        Notasi Panjang Prefiks Jaringan<br>
+
+        Sebuah subnet mask biasanya diekspresikan di dalam notasi desimal bertitik (dotted decimal notation), seperti
+        halnya alamat IP. Setelah semua bit diset sebagai bagian network identifier dan host identifier, hasil nilai
+        32-bit tersebut akan dikonversikan ke notasi desimal bertitik. Perlu dicatat, bahwa meskipun direpresentasikan
+        sebagai notasi desimal bertitik, subnet maskbukanlah sebuah alamat IP.<br>
+
+        Subnet maskd efault dibuat berdasarkan kelas-kelas alamat IP dan digunakan di dalam jaringan TCP/IP yang tidak
+        dibagi ke dalam beberapa subnet.Tabel di bawah ini menyebutkan beberapa subnet mask default dengan menggunakan
+        notasi desimal bertitik. Formatnya adalah(PRASIMAX 2002):</p>
+
+      <figcaption>Tabel 6. Subnetmask pada setiap Kelas IP V4</figcaption>
+      <table>
+        <tr>
+          <th>Kelas alamat</th>
+          <th>Subnet mask (biner)</th>
+          <th>Subnet mask (desimal)</th>
+        </tr>
+        <tr>
+          <td>Kelas A</td>
+          <td>11111111.00000000.00000000.00000000</td>
+          <td>255.0.0.0</td>
+        </tr>
+        <tr>
+          <td>Kelas B</td>
+          <td>11111111.11111111.00000000.000000001</td>
+          <td>255.255.0.0</td </tr>
+        <tr>
+          <td>Kelas C</td>
+          <td>11111111.11111111.11111111.00000000</td>
+          <td>255.255.255.0</td>
+        </tr>
+      </table>
+      <p>Nilai subnet mask default di atas dapat dikustomisasi oleh administrator jaringan, saat melakukan proses
+        pembagian jaringan (subnetting atau supernetting). Sebagai contoh, alamat 138.96.58.0 merupakan sebuah network
+        identifier dari kelas B yang telah dibagi ke beberapa subnet dengan menggunakan bilangan 8-bit. Kedelapan bit
+        tersebut yang digunakan sebagai host identifier akan digunakan untuk menampilkan network identifier yang telah
+        dibagi ke dalam subnet. Subnet yang digunakan adalah total 24 bit sisanya (255.255.255.0) yang dapat digunakan
+        untuk mendefinisikan custom network identifier.</p>
+      <p>
+        Network identifier yang telah di-subnet-kan tersebut serta subnet mask yang digunakannya selanjutnya akan
+        ditampilkan dengan menggunakan notasi sebagai berikut:<br>
+
+      <h5>192.168.0.1, 255.255.255.0</h5>
+      </p>
+
+      <h4>2. Panjang Prefiks (Prefix Length)</h4>
+      <p>Representasi panjang prefiks (prefix length) dari sebuah subnet mask, Karena bit-bit network identifier harus
+        selalu dipilih di dalam sebuah bentuk yang berdekatan dari bit-bit ordo tinggi, maka ada sebuah cara yang
+        digunakan untuk merepresentasikan sebuah subnet mask dengan menggunakan bit yang mendefinisikan network
+        identifier sebagai sebuah network prefix dengan menggunakan notasi network prefix seperti tercantum di dalam
+        tabel di bawah ini. Notasi network prefix juga dikenal dengan sebutan notasi Classless Inter-Domain Routing
+        (CIDR) yang didefinisikan di dalam RFC 1519 (Purbo 2018). Formatnya adalah sebagai berikut:</p>
+
+      <figcaption>Tabel 7. Jumlah bit yang digunakan sebagai network identifier</figcaption>
+      <table>
+        <tr>
+          <th>Kelas alamat</th>
+          <th>Subnet mask (biner)</th>
+          <th>Subnet mask (desimal)</th>
+          <th>Prefix Length</th>
+        </tr>
+        <tr>
+          <td>Kelas A</td>
+          <td>11111111.00000000.00000000.00000000</td>
+          <td>255.0.0.0</td>
+          <td>/8</td>
+        </tr>
+        <tr>
+          <td>Kelas B</td>
+          <td>11111111.11111111.00000000.000000001</td>
+          <td>255.255.0.0</td </tr>
+          <td>/16</td>
+        <tr>
+          <td>Kelas C</td>
+          <td>11111111.11111111.11111111.00000000</td>
+          <td>255.255.255.0</td>
+          <td>/24</td>
+        </tr>
+      </table>
+      <p> Sebagai contoh, network identifier kelas B dari 138.96.0.0 yang memiliki subnet mask 255.255.0.0 dapat
+        direpresentasikan di dalam notasi prefix length sebagai 138.96.0.0/16. Karena semua host yang berada di dalam
+        jaringan yang sama menggunakan network identifier yang sama, maka semua host yang berada di dalam jaringan yang
+        sama harus menggunakan network identifier yang sama yang didefinisikan oleh subnet mask yang sama pula. Sebagai
+        contoh, notasi 138.23.0.0/16 tidaklah sama dengan notasi 138.23.0.0/24, dan kedua jaringan tersebut tidak berada
+        di dalam ruang alamat yang sama. Network identifier 138.23.0.0/16 memiliki range alamat IP yang valid mulai dari
+        138.23.0.1 hingga 138.23.255.254; sedangkan network identifier 138.23.0.0/24 hanya memiliki range alamat IP yang
+        valid mulai dari 138.23.0.1 hingga 138.23.0.254 (Blank 2006).</p>
+
+      <h3> Subnetting Alamat IP kelas A </h3>
+      <figcaption>Tabel 8. Jumlah host pada setiap subnet Kelas A</figcaption>
+      <table>
+        <caption>Tabel Subnet</caption>
+        <thead>
+          <tr>
+            <th>Jumlah Subnet (Segmen Jaringan)</th>
+            <th>Jumlah Subnet Bit</th>
+            <th>Subnet Mask (Notasi Desimal Bertitik/Notasi Panjang Prefiks)</th>
+            <th>Jumlah Host Tiap Subnet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1-2</td>
+            <td>1</td>
+            <td>255.128.0.0 atau /9</td>
+            <td>8388606</td>
+          </tr>
+          <tr>
+            <td>3-4</td>
+            <td>2</td>
+            <td>255.192.0.0 atau /10</td>
+            <td>4194302</td>
+          </tr>
+          <tr>
+            <td>5-8</td>
+            <td>3</td>
+            <td>255.224.0.0 atau /11</td>
+            <td>2097150</td>
+          </tr>
+          <tr>
+            <td>9-16</td>
+            <td>4</td>
+            <td>255.240.0.0 atau /12</td>
+            <td>1048574</td>
+          </tr>
+          <tr>
+            <td>17-32</td>
+            <td>5</td>
+            <td>255.248.0.0 atau /13</td>
+            <td>524286</td>
+          </tr>
+          <tr>
+            <td>33-64</td>
+            <td>6</td>
+            <td>255.252.0.0 atau /14</td>
+            <td>262142</td>
+          </tr>
+          <tr>
+            <td>65-128</td>
+            <td>7</td>
+            <td>255.254.0.0 atau /15</td>
+            <td>131070</td>
+          </tr>
+          <tr>
+            <td>129-256</td>
+            <td>8</td>
+            <td>255.255.0.0 atau /16</td>
+            <td>65534</td>
+          </tr>
+          <tr>
+            <td>257-512</td>
+            <td>9</td>
+            <td>255.255.128.0 atau /17</td>
+            <td>32766</td>
+          </tr>
+          <tr>
+            <td>513-1024</td>
+            <td>10</td>
+            <td>255.255.192.0 atau /18</td>
+            <td>16382</td>
+          </tr>
+          <tr>
+            <td>1025-2048</td>
+            <td>11</td>
+            <td>255.255.224.0 atau /19</td>
+            <td>8190</td>
+          </tr>
+          <tr>
+            <td>2049-4096</td>
+            <td>12</td>
+            <td>255.255.240.0 atau /20</td>
+            <td>4094</td>
+          </tr>
+          <tr>
+            <td>4097-8192</td>
+            <td>13</td>
+            <td>255.255.248.0 atau /21</td>
+            <td>2046</td>
+          </tr>
+          <tr>
+            <td>8193-16384</td>
+            <td>14</td>
+            <td>255.255.252.0 atau /22</td>
+            <td>1022</td>
+          </tr>
+          <tr>
+            <td>16385-32768</td>
+            <td>15</td>
+            <td>255.255.254.0 atau /23</td>
+            <td>510</td>
+          </tr>
+          <tr>
+            <td>32769-65536</td>
+            <td>16</td>
+            <td>255.255.255.0 atau /24</td>
+            <td>254</td>
+          </tr>
+          <tr>
+            <td>65537-131072</td>
+            <td>17</td>
+            <td>255.255.255.128 atau /25</td>
+            <td>126</td>
+          </tr>
+          <tr>
+            <td>131073-262144</td>
+            <td>18</td>
+            <td>255.255.255.192 atau /26</td>
+            <td>62</td>
+          </tr>
+          <tr>
+            <td>262145-524288</td>
+            <td>19</td>
+            <td>255.255.255.224 atau /27</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>524289-1048576</td>
+            <td>20</td>
+            <td>255.255.255.240 atau /28</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>1048577-2097152</td>
+            <td>21</td>
+            <td>255.255.255.248 atau /29</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>1048577-2097152</td>
+            <td>21</td>
+            <td>255.255.255.248 atau /29</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>12097153-4194304</td>
+            <td>22</td>
+            <td>255.255.255.252 atau /30</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Subnetting Alamat IP kelas B</h3>
+      <figcaption>Tabel 9. Jumlah host pada setiap subnet Kelas B</figcaption>
+      <table>
+        <caption>Tabel Subnet</caption>
+        <thead>
+          <tr>
+            <th>Jumlah Subnet/Segmen Jaringan</th>
+            <th>Jumlah Subnet Bit</th>
+            <th>Subnet Mask (notasi desimal bertitik/notasi panjang prefiks)</th>
+            <th>Jumlah Host Tiap Subnet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1-2</td>
+            <td>1</td>
+            <td>255.255.128.0 atau /17</td>
+            <td>32766</td>
+          </tr>
+          <tr>
+            <td>3-4</td>
+            <td>2</td>
+            <td>255.255.192.0 atau /18</td>
+            <td>16382</td>
+          </tr>
+          <tr>
+            <td>5-8</td>
+            <td>3</td>
+            <td>255.255.224.0 atau /19</td>
+            <td>8190</td>
+          </tr>
+          <tr>
+            <td>9-16</td>
+            <td>4</td>
+            <td>255.255.240.0 atau /20</td>
+            <td>4094</td>
+          </tr>
+          <tr>
+            <td>17-32</td>
+            <td>5</td>
+            <td>255.255.248.0 atau /21</td>
+            <td>2046</td>
+          </tr>
+          <tr>
+            <td>33-64</td>
+            <td>6</td>
+            <td>255.255.252.0 atau /22</td>
+            <td>1022</td>
+          </tr>
+          <tr>
+            <td>65-128</td>
+            <td>7</td>
+            <td>255.255.254.0 atau /23</td>
+            <td>510</td>
+          </tr>
+          <tr>
+            <td>129-256</td>
+            <td>8</td>
+            <td>255.255.255.0 atau /24</td>
+            <td>254</td>
+          </tr>
+          <tr>
+            <td>257-512</td>
+            <td>9</td>
+            <td>255.255.255.128 atau /25</td>
+            <td>126</td>
+          </tr>
+          <tr>
+            <td>513-1024</td>
+            <td>10</td>
+            <td>255.255.255.192 atau /26</td>
+            <td>62</td>
+          </tr>
+          <tr>
+            <td>1025-2048</td>
+            <td>11</td>
+            <td>255.255.255.224 atau /27</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>2049-4096</td>
+            <td>12</td>
+            <td>255.255.255.240 atau /28</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>4097-8192</td>
+            <td>13</td>
+            <td>255.255.255.248 atau /29</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>8193-16384</td>
+            <td>14</td>
+            <td>255.255.255.252 atau /30</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Subnetting Alamat IP kelas C</h3>
+      <figcaption>Tabel 10. Jumlah host pada setiap subnet Kelas C</figcaption>
+      <table>
+        <caption>Tabel Subnet</caption>
+        <thead>
+          <tr>
+            <th>Jumlah Subnet (segmen jaringan)</th>
+            <th>Jumlah subnet bit</th>
+            <th>Subnet mask (notasi desimal bertitik/notasi panjang prefiks)</th>
+            <th>Jumlah host tiap subnet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0-1</td>
+            <td>0</td>
+            <td>255.255.255.0 atau /24</td>
+            <td>254</td>
+          </tr>
+          <tr>
+            <td>1-2</td>
+            <td>1</td>
+            <td>255.255.255.128 atau /25</td>
+            <td>126</td>
+          </tr>
+          <tr>
+            <td>3-4</td>
+            <td>2</td>
+            <td>255.255.255.192 atau /26</td>
+            <td>62</td>
+          </tr>
+          <tr>
+            <td>5-8</td>
+            <td>3</td>
+            <td>255.255.255.224 atau /27</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>9-16</td>
+            <td>4</td>
+            <td>255.255.255.240 atau /28</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>17-32</td>
+            <td>5</td>
+            <td>255.255.255.248 atau /29</td>
+            <td>6</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Subnetting</h3>
+      <p> Pada hakekatnya semua pertanyaan tentang subnetting akan berkisar di empat masalah: Jumlah subnet, Jumlah Host
+        per Subnet, Blok Subnet, dan alamat Host- Broadcast.<br><br>
+
+        Penulisan IP address umumnya adalah dengan 192.168.1.2. Namun adakalanya ditulis dengan 192.168.1.2/24, Artinya
+        bahwa IP address 192.168.1.2 dengan subnet mask 255.255.255.0. Ya, /24 diambil dari penghitungan bahwa 24 bit
+        subnet mask diselubung dengan binari 1. Atau dengan kata lain, subnet masknya adalah:
+        11111111.11111111.11111111.00000000 (255.255.255.0). Konsep ini yang disebut dengan CIDR (Classless Inter-Domain
+        Routing) yang diperkenalkan pertama kali tahun 1992 oleh IEFT (PRASIMAX 2002).</p>
+
+      <figcaption>Tabel 11. Nilai CIDR Subnet Mask</figcaption>
+      <table>
+        <caption>Tabel Subnet Mask dan Nilai CIDR</caption>
+        <thead>
+          <tr>
+            <th>Subnet Mask</th>
+            <th>Nilai CIDR</th>
+            <th>Subnet Mask</th>
+            <th>Nilai CIDR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>255.128.0.0</td>
+            <td>/9</td>
+            <td>255.255.248.0</td>
+            <td>/20</td>
+          </tr>
+          <tr>
+            <td>255.192.0.0</td>
+            <td>/10</td>
+            <td>255.255.252.0</td>
+            <td>/22</td>
+          </tr>
+          <tr>
+            <td>255.224.0.0</td>
+            <td>/11</td>
+            <td>255.255.254.0</td>
+            <td>/23</td>
+          </tr>
+          <tr>
+            <td>255.240.0.0</td>
+            <td>/12</td>
+            <td>255.255.255.0</td>
+            <td>/24</td>
+          </tr>
+          <tr>
+            <td>255.248.0.0</td>
+            <td>/13</td>
+            <td>255.255.255.128</td>
+            <td>/25</td>
+          </tr>
+          <tr>
+            <td>255.252.0.0</td>
+            <td>/14</td>
+            <td>255.255.255.192</td>
+            <td>/26</td>
+          </tr>
+          <tr>
+            <td>255.254.0.0</td>
+            <td>/15</td>
+            <td>255.255.255.224</td>
+            <td>/27</td>
+          </tr>
+          <tr>
+            <td>255.255.0.0</td>
+            <td>/16</td>
+            <td>255.255.255.240</td>
+            <td>/28</td>
+          </tr>
+          <tr>
+            <td>255.255.128.0</td>
+            <td>/17</td>
+            <td>255.255.255.248</td>
+            <td>/29</td>
+          </tr>
+          <tr>
+            <td>255.255.192.0</td>
+            <td>/18</td>
+            <td>255.255.255.252</td>
+            <td>/30</td>
+          </tr>
+          <tr>
+            <td>255.255.224.0</td>
+            <td>/19</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Variable-length Subnetting</h3>
+      <p>
+        Pembahasan di atas merupakan sebuah contoh dari subnetting yang memiliki panjang tetap (fixed length
+        subnetting), yang akan menghasilkan beberapa subjaringan dengan jumlah host yang sama. Jika proses subnetting
+        yang menghasilkan beberapa subjaringan dengan jumlah host yang sama telah dilakukan, maka ada kemungkinan di
+        dalam segmen-segmen jaringan tersebut memiliki alamat-alamat yang tidak digunakan atau membutuhkan lebih banyak
+        alamat. Karena itulah, dalam kasus ini proses subnetting harus dilakukan berdasarkan segmen jaringan yang
+        dibutuhkan oleh jumlah host terbanyak (Blank 2006).</p>
+
+      <p>Untuk memaksimalkan penggunaan ruangan alamat yang tetap, subnetting pun diaplikasikan secara rekursif untuk
+        membentuk beberapa subjaringan dengan ukuran bervariasi, yang diturunkan dari network identifier yang sama.
+        Teknik subnetting seperti ini disebut juga variable-length subnetting.</p>
+
+      <p> Subjaringan-subjaringan yang dibuat dengan teknik ini menggunakan subnet mask yang disebut sebagai
+        Variable-length Subnet Mask (VLSM). Karena semua subnet diturunkan dari network identifier yang sama, jika
+        subnet-subnet tersebut berurutan (kontigu subnet yang berada dalam network identifier yang sama yang dapat
+        saling berhubungan satu sama lainnya), rute yang ditujukan ke subnet-subnet tersebut dapat diringkas dengan
+        menyingkat network identifier yang asli.</p>
+
+      <p>Teknik variable-length subnetting harus dilakukan secara hati-hati sehingga subnet yang dibentuk pun unik, dan
+        dengan menggunakan subnet mask tersebut dapat dibedakan dengan subnet lainnya, meski berada dalam network
+        identifer asli yang sama. Kehati-hatian tersebut melibatkan analisis yang lebih terhadap segmen-segmen jaringan
+        yang akan menentukan berapa banyak segmen yang akan dibuat dan berapa banyak jumlah host dalam setiap segmennya.
+      </p>
+
+      <p> Protokol-protokol routing yang mendukung VLSM adalah Routing Information Protocol (RIP) versi 2 (RIPv2), Open
+        Shortest Path First (OSPF), dan Border Gateway Protocol (BGP versi 4 (BGPv4). Protokol RIP versi 1 yang lama,
+        tidak mendukungya, sehingga jika ada sebuah router yang hanya mendukung protokol tersebut, maka router tersebut
+        tidak dapat melakukan routing terhadap subnet yang dibagi dengan menggunakan teknik variable-length subnet mask.
+      </p>
+
+      <figcaption>prefix IP</figcaption>
+
+    </section>
+    <table>
+      <thead>
+        <tr>
+          <th>Binary Mask</th>
+          <th>Prefix Length</th>
+          <th>Subnet Mask</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11111111 00000000 00000000 00000000</td>
+          <td>/8</td>
+          <td>255.0.0.0</td>
+        </tr>
+        <tr>
+          <td>11111111 10000000 00000000 00000000</td>
+          <td>/9</td>
+          <td>255.128.0.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11000000 00000000 00000000</td>
+          <td>/10</td>
+          <td>255.192.0.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11100000 00000000 00000000</td>
+          <td>/11</td>
+          <td>255.224.0.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11110000 00000000 00000000</td>
+          <td>/12</td>
+          <td>255.240.0.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111000 00000000 00000000</td>
+          <td>/13</td>
+          <td>255.248.0.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111100 00000000 00000000</td>
+          <td>/14</td>
+          <td>255.252.0.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111110 00000000 00000000</td>
+          <td>/15</td>
+          <td>255.254.0.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 00000000 00000000</td>
+          <td>/16</td>
+          <td>255.255.0.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 10000000 00000000</td>
+          <td>/17</td>
+          <td>255.255.128.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11000000 00000000</td>
+          <td>/18</td>
+          <td>255.255.192.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11100000 00000000</td>
+          <td>/19</td>
+          <td>255.255.224.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11110000 00000000</td>
+          <td>/20</td>
+          <td>255.255.240.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111000 00000000</td>
+          <td>/21</td>
+          <td>255.255.248.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111100 00000000</td>
+          <td>/22</td>
+          <td>255.255.252.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111110 00000000</td>
+          <td>/23</td>
+          <td>255.255.254.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111111 00000000</td>
+          <td>/24</td>
+          <td>255.255.255.0</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111111 10000000</td>
+          <td>/25</td>
+          <td>255.255.255.128</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111111 11000000</td>
+          <td>/26</td>
+          <td>255.255.255.192</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111111 11100000</td>
+          <td>/27</td>
+          <td>255.255.255.224</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111111 11110000</td>
+          <td>/28</td>
+          <td>255.255.255.240</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111111 11111000</td>
+          <td>/29</td>
+          <td>255.255.255.248</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111111 11111100</td>
+          <td>/30</td>
+          <td>255.255.255.252</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111111 11111110</td>
+          <td>/31</td>
+          <td>255.255.255.254</td>
+        </tr>
+        <tr>
+          <td>11111111 11111111 11111111 11111111</td>
+          <td>/32</td>
+          <td>255.255.255.255</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Materi Pembelajaran. Semua Hak Dilindungi.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
